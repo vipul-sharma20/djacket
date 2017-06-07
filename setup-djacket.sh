@@ -78,7 +78,7 @@ function chk_reqs () {
         echo 'pip3 package manager (part of Python 3.x) not found.';
         issue_error;
     fi
-    if ! python -c "from PIL import Image"; then
+    if ! python3 -c "from PIL import Image"; then
         echo 'Pillow is not installed.';
         issue_error;
     fi
@@ -112,16 +112,16 @@ function setup_django () {
     prepare_environment;
     echo "GIT_DEPOSIT_ROOT = '${deposit_path}'" >> ${DJACKETPATH}/core/backend/djacket/settings.py;
     cd ${DJACKETPATH}/core/backend;
-    ./manage.py makemigrations;
-    ./manage.py migrate;
-    ./manage.py collectstatic --noinput;
+    python3 manage.py makemigrations;
+    python3 manage.py migrate;
+    python3 manage.py collectstatic --noinput;
     echo;
     echo;
     echo 'Creating super user -------------------------------------------- [ STARTED ]';
     echo;
     echo 'A super user should be created for management and administration';
     echo '  Please provide requested information to create one.';
-    ./manage.py createsuperuser;
+    python3 manage.py createsuperuser;
     cd ../..;
     chmod +x djacket.sh;
     echo;
