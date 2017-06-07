@@ -25,7 +25,8 @@ FRONTEND_DIR = os.path.join(BASE_DIR, '..', 'frontend')
 # See https://docs.djangoproject.com/en/1.8/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'a randomly generated string will be installed'
+SECRET_KEY = '0BGUUylf3vmy6P8zsyEDG0iF6Sc47W9zegmwjMDZ7Vs'
+ALLOWED_HOSTS = ['']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -95,24 +96,24 @@ WSGI_APPLICATION = 'djacket.wsgi.application'
 #   comment sqlite3 database settings below and uncomment PostgreSQL settings.
 #   Make sure your PostgreSQL database is setup first and your database is created.
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-	'NAME': os.path.join(BASE_DIR, '..', 'djacketdb.sqlite3'),
-    }
-}
-
-# PostgreSQL database settings.
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'djacket',
-#         'USER': 'postgres',
-#         'PASSWORD': '',
-#         'HOST': 'localhost',
-#         'PORT': '5432',
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': os.path.join(BASE_DIR, '..', 'djacketdb.sqlite3'),
 #     }
 # }
+
+# PostgreSQL database settings.
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'djacket',
+        'USER': 'vipul',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '5432',
+    }
+}
 
 
 
@@ -169,3 +170,9 @@ SITE_NAME = 'Djacket'
 #   e.g.
 #       GIT_DEPOSIT_ROOT = '/path/to/your/deposit/folder'
 # Other variables from installation such as ALLOWED_HOSTS and SECRET_KEY will be set here.
+
+GIT_DEPOSIT_ROOT = os.path.join(os.path.dirname(BASE_DIR), '..', 'repositories')
+
+ALLOWED_HOSTS = ['']
+SECRET_KEY = 'TauyHK2#BwkF3v_F(lj>dyM}<cf*tU6NUlc2[?whbKuN_uJ=IJy7w*Go8}oMOo6F'
+GIT_DEPOSIT_ROOT = ''
