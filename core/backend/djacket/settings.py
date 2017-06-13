@@ -26,7 +26,7 @@ FRONTEND_DIR = os.path.join(BASE_DIR, '..', 'frontend')
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '0BGUUylf3vmy6P8zsyEDG0iF6Sc47W9zegmwjMDZ7Vs'
-ALLOWED_HOSTS = ['']
+ALLOWED_HOSTS = ['*']
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -107,11 +107,10 @@ WSGI_APPLICATION = 'djacket.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'djacket',
-        'USER': 'vipul',
-        'PASSWORD': '',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'NAME': 'postgres',
+        'USER': 'postgres',
+        'HOST': 'db',
+        'PORT': 5432
     }
 }
 
