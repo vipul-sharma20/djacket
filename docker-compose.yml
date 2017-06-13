@@ -1,0 +1,16 @@
+db:
+    container_name: pg_1
+    restart: always
+    image: postgres:latest
+
+web:
+    container_name: web_1
+    build: .
+    command: sh entrypoint.sh
+    volumes:
+        - .:/djacket/
+    ports:
+        - "8000:8000"
+    links:
+        - db:db
+
